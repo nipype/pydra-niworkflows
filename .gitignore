@@ -141,8 +141,4 @@ dmypy.json
 .DS_store
 
 # Generated files
-/pydra/tasks/niworkflows/_version.py
-/related-packages/fileformats/fileformats/medimage_niworkflows/_version.py
-/related-packages/fileformats-extras/fileformats/extras/medimage_niworkflows/_version.py
-/pydra/tasks/niworkflows/auto
-/pydra/tasks/niworkflows/_version.py
+/pydra/tasks/niworkflows/
