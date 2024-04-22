@@ -8,3 +8,4 @@ niworkflows.interfaces.morphology.BinaryDilation
 niworkflows.interfaces.morphology.BinarySubtraction
 niworkflows.interfaces.nibabel.IntensityClip
 niworkflows.utils.connections.pop_file
+niworkflows.data.Loader

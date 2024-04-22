@@ -6,3 +6,14 @@ nipype_name: niworkflows
 config_params: null
 # Mappings between nipype packages and their pydra equivalents. Regular expressions are supported
 import_translations: null
+find_replace:
+  - [NIWORKFLOWS_LOG = logging.getLogger\(__packagename__\), ""]
+  - ["from .. import config, logging", ""]
+  - ["_cifs_table = _generate_cifs_table\\(\\)", ""]
+copy_packages:
+  - niworkflows.data
+omit_objects:
+  - nipype.utils.filemanip._generate_cifs_table
+omit_modules:
+  - niworkflows.config
+  - niworkflows.logging
