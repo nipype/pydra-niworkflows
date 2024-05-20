@@ -120,20 +120,6 @@ jobs:
       if: github.event_name == 'repository_dispatch'
       run: git checkout $(git tag -l | grep 'v.*' | tail -n 1 | awk -F post '{print $1}')
 
-    - name: Cache niworkflows Install
-      id: cache-install
-      uses: actions/cache@v4
-      with:
-        path: ${{ env.niworkflows_install_dir }}
-        key: niworkflows-${{ env.niworkflows_version }}-${{ runner.os }}
-
-    - name: Install niworkflows Package
-      if: steps.cache-install.outputs.cache-hit != 'true'
-      run: |
-        echo "NOT IMPLEMENTED YET (install at niworkflows_install_dir: $niworkflows_install_dir)"
-        exit 1  # This is a placeholder, replace this line and the one above with the installation procedure
-        echo "PATH=${{ env.niworkflows_install_dir }}/bin:$PATH" >> $GITHUB_ENV
-    
     - name: Download tasks converted from Nipype 
       uses: actions/download-artifact@v4
       with:
