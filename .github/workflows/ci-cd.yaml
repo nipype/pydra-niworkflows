@@ -29,9 +29,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Revert version to most recent version tag on upstream update
-      if: github.event_name == 'repository_dispatch'
-      run: git checkout $(git tag -l | grep 'v.*' | tail -n 1 | awk -F post '{print $1}')
+    # - name: Revert version to most recent version tag on upstream update
+    #   if: github.event_name == 'repository_dispatch'
+    #   run: git checkout $(git tag -l | grep 'v.*' | tail -n 1 | awk -F post '{print $1}')
  
     - name: Set up Python
       uses: actions/setup-python@v5
